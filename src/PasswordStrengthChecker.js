@@ -58,34 +58,37 @@ const PasswordStrengthChecker = () => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '20px auto', textAlign: 'center', background: '#f3f4f6', padding: '20px', borderRadius: '8px' }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={handleUsernameChange}
-          placeholder="Enter your username"
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
-          required
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Enter your password"
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
-          required
-        />
-        <div style={{ marginBottom: '10px' }}>
-          <strong>Password Strength:</strong> {strength}
-        </div>
-        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#61dafb', border: 'none', borderRadius: '4px', color: '#fff', fontSize: '16px' }}>
-          Submit
-        </button>
-      </form>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#e2e8f0' }}>
+      <div style={{ width: '100%', maxWidth: '400px', background: '#f3f4f6', padding: '20px', borderRadius: '8px', boxSizing: 'border-box' }}>
+        <h2 style={{ textAlign: 'center' }}>Login</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <input
+            type="text"
+            value={username}
+            onChange={handleUsernameChange}
+            placeholder="Enter your username"
+            style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+            required
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Enter your password"
+            style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+            required
+          />
+          <div style={{ width: '100%', marginBottom: '10px', textAlign: 'center' }}>
+            <strong>Password Strength:</strong> {strength}
+          </div>
+          <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#61dafb', border: 'none', borderRadius: '4px', color: '#fff', fontSize: '16px' }}>
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
 
 export default PasswordStrengthChecker;
+
